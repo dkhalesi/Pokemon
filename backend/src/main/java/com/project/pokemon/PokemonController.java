@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import com.project.pokemon.models.PlayersRequest;
 import com.project.pokemon.models.Pokemon;
 import com.project.pokemon.models.PokemonListResponse;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class PokemonController {
 
