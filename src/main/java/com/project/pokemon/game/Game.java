@@ -21,11 +21,11 @@ public class Game {
             if (this.playerTurn == 1) {
                 String attackType = attack(this.player1, this.player2);
                 this.playerTurn = 2;
-                describeAttack(player1, player2, attackType);
+                logs.add(describeAttack(player1, player2, attackType));
             } else {
                 String attackType = attack(this.player2, this.player1);
                 this.playerTurn = 1;
-                describeAttack(player2, player1, attackType);
+                logs.add(describeAttack(player2, player1, attackType));
             }
         }
     }
@@ -42,8 +42,9 @@ public class Game {
 
     private String describeAttack(Player attacker, Player opponent, String attackType) {
         return attacker.getName() + " attacks " + opponent.getName() + "'s pokemon with "
-                + attacker.getPokemon().getName() + "'s"
-                + attackType + " leaving " + opponent.getPokemon().getName() + " with " + opponent.getPokemon().getHp()
+                + attacker.getPokemon().getName() + "'s "
+                + attackType + " leaving " + opponent.getPokemon().getName() + " with "
+                + Math.max(opponent.getPokemon().getHp(), 0)
                 + "HP";
     }
 

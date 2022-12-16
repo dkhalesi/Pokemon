@@ -19,7 +19,7 @@ public class Tournament {
     }
 
     public List<String> simulateTournament() {
-        while (this.player1Wins < 2 && this.player1Wins < 2) {
+        while (this.player1Wins < 2 && this.player2Wins < 2) {
             Game game = this.createGame(player1, player2);
             game.startFight(logs);
 

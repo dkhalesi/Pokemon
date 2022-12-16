@@ -1,15 +1,13 @@
 package com.project.pokemon.game;
 
-import com.project.pokemon.pokemon.Pokemon;
-
 public class Player {
     private String name;
-    private Pokemon pokemon;
+    private PokemonInGame pokemon;
     private int specialAttackWait;
 
-    public Player(String name, Pokemon pokemon) {
+    public Player(String name, PokemonInGame pokemon) {
         this.name = name;
-        this.pokemon = new Pokemon(pokemon.getName(), pokemon.getHeight(), pokemon.getWeight());
+        this.pokemon = pokemon;
         this.specialAttackWait = 0;
     }
 
@@ -44,11 +42,11 @@ public class Player {
         this.name = name;
     }
 
-    public Pokemon getPokemon() {
+    public PokemonInGame getPokemon() {
         return this.pokemon;
     }
 
-    public void setPokemon(Pokemon pokemon) {
+    public void setPokemon(PokemonInGame pokemon) {
         this.pokemon = pokemon;
     }
 

@@ -1,4 +1,4 @@
-package com.project.pokemon.pokemon;
+package com.project.pokemon.models;
 
 public class PokemonResponse {
     private String name;
