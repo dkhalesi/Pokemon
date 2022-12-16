@@ -8,7 +8,7 @@ public class Player {
     public Player(String name, PokemonInGame pokemon) {
         this.name = name;
         this.pokemon = pokemon;
-        this.specialAttackWait = 0;
+        this.specialAttackWait = 1;
     }
 
     public Boolean isAlive() {

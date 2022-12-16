@@ -30,7 +30,7 @@ public class Game {
         }
     }
 
-    private String attack(Player attacker, Player opponent) {
+    public String attack(Player attacker, Player opponent) {
         if (attacker.getSpecialAttackWait() == 0) {
             attacker.specialAttack(opponent);
             return "Special Attack";
