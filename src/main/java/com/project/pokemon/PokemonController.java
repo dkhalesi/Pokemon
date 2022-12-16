@@ -16,8 +16,6 @@ public class PokemonController {
     @GetMapping(value = "/pokemons")
     public List<Pokemon> getPokemons() {
         try {
-            System.out.println("DINA HERE");
-
             String uri = "https://pokeapi.co/api/v2/pokemon?limit=50";
             RestTemplate restTemplate = new RestTemplate();
             PokemonListResponse pokemonListResponse = restTemplate.getForObject(uri,
