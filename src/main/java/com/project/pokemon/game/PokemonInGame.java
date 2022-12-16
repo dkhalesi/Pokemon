@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class PokemonInGame {
     private String name;
     private int hp;
-    private int normalAttack; // TO-DO: change
-    private int specialAttack; // TO-DO: change
+    private int normalAttack;
+    private int specialAttack;
 
-    public PokemonInGame(String name) {
+    public PokemonInGame(String name, int normalAttack, int specialAttack) {
         this.name = name;
         this.hp = 20;
-        this.normalAttack = 1;
-        this.specialAttack = 5;
+        this.normalAttack = normalAttack;
+        this.specialAttack = specialAttack;
     }
 
     public void resetHP() {

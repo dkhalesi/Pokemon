@@ -39,8 +39,10 @@ public class PokemonController {
 
     @PostMapping(path = "simulatefight", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<String> simulateTournament(@RequestBody PlayersRequest playersRequest) {
-        PokemonInGame pokemon1 = new PokemonInGame(playersRequest.getPokemonName1());
-        PokemonInGame pokemon2 = new PokemonInGame(playersRequest.getPokemonName2());
+        PokemonInGame pokemon1 = new PokemonInGame(playersRequest.getPokemonName1(),
+                playersRequest.getPokemonNormalAttack1(), playersRequest.getPokemonSpecialAttack1());
+        PokemonInGame pokemon2 = new PokemonInGame(playersRequest.getPokemonName2(),
+                playersRequest.getPokemonNormalAttack2(), playersRequest.getPokemonSpecialAttack2());
         Player player1 = new Player(playersRequest.getName1(), pokemon1);
         Player player2 = new Player(playersRequest.getName2(), pokemon2);
 
