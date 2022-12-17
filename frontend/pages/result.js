@@ -9,7 +9,6 @@ const Result = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Commentator's Notes</h1>
       {Object.entries(result).map(([key, value]) =>
-        // <p>{value}</p>
         (() => {
           let classname = null;
           if (value.includes("Round")) {
