@@ -1,7 +1,7 @@
 import React from "react";
 
 import Router from "next/router";
-// import { Inter } from "@next/font/google";
+import styles from "../styles/Form.module.css";
 
 export const Form = () => {
   const [player1, setPlayer1] = React.useState("");
@@ -9,6 +9,7 @@ export const Form = () => {
   const [player2, setPlayer2] = React.useState("");
   const [pokemon2, setPokemon2] = React.useState("");
   const [pokemons, setPokemons] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -16,9 +17,14 @@ export const Form = () => {
       const data = await response.json();
       console.log(data[0], data[0].name);
       setPokemons(data);
+      setLoading(false);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -60,10 +66,11 @@ export const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <label>
         Player 1 Name:&nbsp;
         <input
+          className={styles.box}
           type="text"
           value={player1}
           onChange={(event) => setPlayer1(event.target.value)}
@@ -73,6 +80,7 @@ export const Form = () => {
       <label>
         Player 1 Pokemon:&nbsp;
         <select
+          className={styles.box}
           value={pokemon1}
           onChange={(event) => setPokemon1(event.target.value)}
         >
@@ -91,6 +99,7 @@ export const Form = () => {
       <label>
         Player 2 Name:&nbsp;
         <input
+          className={styles.box}
           type="text"
           value={player2}
           onChange={(event) => setPlayer2(event.target.value)}
@@ -100,6 +109,7 @@ export const Form = () => {
       <label>
         Player 2 Pokemon:&nbsp;
         <select
+          className={styles.box}
           value={pokemon2}
           onChange={(event) => setPokemon2(event.target.value)}
         >
@@ -114,7 +124,7 @@ export const Form = () => {
         </select>
       </label>
       <br />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Start Fight" className={styles.input} />
     </form>
   );
 };

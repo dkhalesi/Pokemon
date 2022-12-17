@@ -1,10 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 6rem;
+  padding-top: 0rem;
   min-height: 100vh;
+}
+
+.title {
+  font-size: 3rem;
 }
 
 .description {
@@ -78,14 +83,6 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
-}
-
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
 }
 
 .center::after {

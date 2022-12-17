@@ -1,0 +1,15 @@
+.form {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    align-self: center;
+    padding:10px 20px;
+    font-size: 20px;
+}
+
+.box{
+    font-size: 20px;
+}

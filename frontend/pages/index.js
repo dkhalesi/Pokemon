@@ -1,11 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-// import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 import { Form } from "../components/Form";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -18,19 +13,9 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.center}>
-          <h1>Pokemon Fight Simulator</h1>
+          <h1 className={styles.title}>Pokemon Fight Simulator</h1>
         </div>
         <Form />
-        {/* <Link
-          href="/result"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Start Fight <span>-&gt;</span>
-          </h2>
-        </Link> */}
         <div></div>
         <div className={styles.grid}></div>
       </main>
