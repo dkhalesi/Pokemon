@@ -1,0 +1,25 @@
+.title {
+    font-size: 3.5rem;
+  }
+
+.container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  padding-top: 0rem;
+  min-height: 100vh;
+  font-size: 20px
+}
+
+.round {
+    font-size: 2rem;
+    color: green;
+}
+
+.winner {
+    font-size: 3rem;
+    color: yellow;
+}
