@@ -3,7 +3,7 @@ import React from "react";
 import Router from "next/router";
 import styles from "../styles/Form.module.css";
 
-export const Form = () => {
+export const Form = (props) => {
   const [player1, setPlayer1] = React.useState("");
   const [pokemon1, setPokemon1] = React.useState("");
   const [player2, setPlayer2] = React.useState("");
@@ -49,6 +49,7 @@ export const Form = () => {
         pokemonSpecialAttack2: pokemonObj2.specialAttack,
       };
 
+      props.setFormEntry(requestBody);
       fetch("http://localhost:8080/simulatefight", {
         method: "POST",
         body: JSON.stringify(requestBody),
@@ -58,7 +59,7 @@ export const Form = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          Router.push({ pathname: "/result", query: data });
+          props.setResult(data);
         });
     } else {
       alert("Incomplete Fields!");
@@ -88,8 +89,7 @@ export const Form = () => {
           {pokemons.map((pokemon) => (
             <option key={pokemon.name} value={pokemon.name}>
               Name: {pokemon.name}&nbsp;, Height: {pokemon.height}&nbsp;,
-              Weight:
-              {pokemon.weight}
+              Weight: {pokemon.weight}
             </option>
           ))}
         </select>
@@ -117,8 +117,7 @@ export const Form = () => {
           {pokemons.map((pokemon) => (
             <option key={pokemon.name} value={pokemon.name}>
               Name: {pokemon.name}&nbsp;, Height: {pokemon.height}&nbsp;,
-              Weight:
-              {pokemon.weight}
+              Weight: {pokemon.weight}
             </option>
           ))}
         </select>
